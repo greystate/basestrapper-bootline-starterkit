@@ -94,5 +94,3 @@ Instead of forking the project, you should start a new "copy" by cloning in a sp
 	# Initialize a new repository
 	$ git init .
 ```
-
-

@@ -36,9 +36,14 @@ This folder holds the source files in these subfolders:
 	In here, `app.less` should import any other `.less` file so they can all be
 	output to a single CSS file to `buils/assets`.
 
-* `views`
+* `kit`
 
-	Kit files/partials that generate HTML are here
+	Kit files/partials that generate HTML are here.
+	They should mirror the structure into the build folder,
+	so you can create `src/kit/projects/index.kit` =>
+	`build/projects/index.html` which CodeKit will serve
+	on the `/projects/` URL.
+
 
 ### build
 
@@ -72,3 +77,22 @@ From time to time...
 ### The `config.codekit3.sample` file
 
 If you're using CodeKit 3, you can use this file to align the settings with mine for the project. Just yank off the `.sample` extension so it's called `config.codekit3` and apply it to the project from within CodeKit.
+
+
+Using this for new projects
+---------------------------
+
+Instead of forking the project, you should start a new "copy" by cloning in a specific by only cloning the `master` branch. Then delete the .git directory to remove the connection to this, and initialize a new repo:
+
+```shell
+	# Get a shallow clone
+	$ git clone https://github.com/greystate/basestrapper-bootline-starterkit --single-branch "NEW_PROJECT_NAME"
+	# Move into the new directory
+	$ cd "NEW_PROJECT_NAME"
+	# Delete the existing `.git` folder
+	$ rm -rf .git
+	# Initialize a new repository
+	$ git init .
+```
+
+
